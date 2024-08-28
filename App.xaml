@@ -8,8 +8,8 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <!--Шрифт-->
-                <ResourceDictionary Source="Styles/FontFamily.xaml"/>
-                <ResourceDictionary Source="Styles/FontSize.xaml"/>
+                <ResourceDictionary Source="Resourses/Styles/FontFamily.xaml"/>
+                <ResourceDictionary Source="Resourses/Styles/FontSize.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>       
     </Application.Resources>
