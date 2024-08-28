@@ -5,28 +5,40 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MIP_Calculator"
         mc:Ignorable="d"
-        Title="Инженерный калькулятор" Height="450" Width="800">
+        Title="Инженерный калькулятор" Height="450" Width="500">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition MinWidth="30" Width="100"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="100"/>
-            <RowDefinition/>
+            <RowDefinition MinHeight="100"/>
+            <RowDefinition Height="50"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
         <!--Основная компановка-->
         <!--Здесь будем выводить список вычесленных выражений-->
-        <ListView Grid.Row="0" Grid.Column="0"/>
+        <ListBox Grid.Row="0" Grid.Column="0" SelectionMode="Multiple" Margin="3">
+            <TextBlock Text="1+1=2"/>
+            <TextBlock Text="1-1=0"/>
+            <TextBlock Text="1*1=1"/>
+            <TextBlock Text="1/1=1"/>
+        </ListBox>
         <!--Здесь будет панель переключения формата вывода выражений-->
-        <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Vertical">
-            <Button Content="C"/>
-            <Button Content="Deg"/>
-            <Button Content="Dec"/>
+        <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Vertical" Margin="3">
+            <Button Content="C" ToolTip="Формат выражения"/>
+            <Button Content="Deg" ToolTip="Формат углов в тригонометрии"/>
+            <Button Content="Dec" ToolTip="Формат результата"/>
         </StackPanel>            
         <!--Здесь будет окно ввода выражения-->
-        <TextBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" TextWrapping="Wrap"/>
+        <TextBox Grid.Row="1" 
+                 Grid.Column="0" 
+                 Grid.ColumnSpan="2" 
+                 TextWrapping="Wrap" 
+                 Margin="3" 
+                 VerticalAlignment="Center" 
+                 MinHeight="30" 
+                 VerticalContentAlignment="Center"/>
         <!--Здесь будет зона вывода панелей кнопок ввода команд и значениий-->
         <Grid Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2">
             <Grid.ColumnDefinitions>
@@ -36,11 +48,131 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition/>
+                <RowDefinition Height="20"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-        </Grid>
-        
-        
+            <!--Панель кнопок для работы с памятью-->
+            <Grid Grid.Row="0" Grid.Column="0" Grid.RowSpan="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition MinHeight="20"/>
+                    <RowDefinition MinHeight="20"/>
+                    <RowDefinition MinHeight="20"/>
+                    <RowDefinition MinHeight="20"/>
+                    <RowDefinition MinHeight="20"/>
+                </Grid.RowDefinitions>
+                <Button Content="MC" Grid.Column="0" Grid.Row="0" ToolTip="Очистка выбранной ячейки памяти"/>
+                <Button Content=">" Grid.Column="1" Grid.Row="0" ToolTip="Выбор ячейки памяти"/>
+                <Button Content="MR" Grid.Column="0" Grid.Row="1" ToolTip="Вызвать из выбранной ячейки памяти"/>
+                <Button Content=">" Grid.Column="1" Grid.Row="1" ToolTip="Выбор ячейки памяти"/>
+                <Button Content="MS" Grid.Column="0" Grid.Row="2" ToolTip="Записать в выбранную ячейку памяти"/>
+                <Button Content=">" Grid.Column="1" Grid.Row="2" ToolTip="Выбор ячейки памяти"/>
+                <Button Content="M+" Grid.Column="0" Grid.Row="3" ToolTip="Добавить к содержимому выбранной ячейки памяти"/>
+                <Button Content=">" Grid.Column="1" Grid.Row="3" ToolTip="Выбор ячейки памяти"/>
+                <Button Content="M-" Grid.Column="0" Grid.Row="4" ToolTip="Вычесть из выбранной ячейки памяти"/>
+                <Button Content=">" Grid.Column="1" Grid.Row="4" ToolTip="Выбор ячейки памяти"/>
+            </Grid>
+            <!--Панель для размещения кнопок включения обратных и гиперболических функций-->
+            <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal">
+                <Button Content="Inv" ToolTip="Обратные функции" Width="50"/>
+                <Button Content="Hyp" ToolTip="Гиперболические функции" Width="50"/>
+            </StackPanel>
+            <!--Панель для размещения тригонометрических и логарифмических функций-->
+            <Grid Grid.Row="1" Grid.Column="1" Width="120">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50"/>
+                    <ColumnDefinition Width="70"/>                    
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Button Grid.Column="0" Grid.Row="0" Content="Pi" ToolTip="Число Пи"/>
+                <Button Grid.Column="1" Grid.Row="0" Content="Sqrt" ToolTip="Квадратный корень числа"/>
+                <Button Grid.Column="0" Grid.Row="1" Content="Cos" ToolTip="Косинус числа"/>
+                <Button Grid.Column="1" Grid.Row="1" Content="Exp" ToolTip="Экспонента числа"/>
+                <Button Grid.Column="0" Grid.Row="2" Content="Sin" ToolTip="Синус числа"/>
+                <Button Grid.Column="1" Grid.Row="2" Content="10^X" ToolTip="Десять в степени числа"/>
+                <Button Grid.Column="0" Grid.Row="3" Content="Tan" ToolTip="Тангенс числа"/>
+                <Button Grid.Column="1" Grid.Row="3" Content="DegToRad" ToolTip="Перевод величины угла из градусов в радианы"/>
+                <Button Grid.Column="0" Grid.Row="4" Content="Sec" ToolTip="Секанс числа"/>
+                <Button Grid.Column="1" Grid.Row="4" Content="GradToRad" ToolTip="Перевод величины угла из градов в радианы"/>
+                <Button Grid.Column="0" Grid.Row="5" Content="Cosec" ToolTip="Косеканс числа"/>
+                <Button Grid.Column="1" Grid.Row="5" Content="DmsToDeg" ToolTip="Перевод величины угла из градусов, минут и секунд в десятичные градусы"/>
+            </Grid>
+            
+            <!--Панель для размещения кнопок команд для работы с буфером обмена-->
+            <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2">                
+                <Button Content="Paste" ToolTip="Вставить"/>
+                <Button Content="Copy" ToolTip="Копировать"/>
+                <Button Content=">" ToolTip="Копировать"/>
+                <Button Content="ACopy" ToolTip="Автокопирование в буфер обмена"/>
+                <Button Content=">" ToolTip="Автокопирование в буфер обмена"/>
+                <Button Content="APaste" ToolTip="Автовставка результата в документ"/>
+                <Button Content=">" ToolTip="Автовставка результата в документ"/>
+                <Button Content="!" ToolTip="Автовыполнение функции"/>
+            </StackPanel>
+            <!--Панель для размещения цифровых кнопок-->
+            <Grid Grid.Row="1" Grid.Column="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Button Grid.Column="0" Grid.Row="0" Content="7"/>
+                <Button Grid.Column="1" Grid.Row="0" Content="8"/>
+                <Button Grid.Column="2" Grid.Row="0" Content="9"/>
+                <Button Grid.Column="0" Grid.Row="1" Content="4"/>
+                <Button Grid.Column="1" Grid.Row="1" Content="5"/>
+                <Button Grid.Column="2" Grid.Row="1" Content="6"/>
+                <Button Grid.Column="0" Grid.Row="2" Content="1"/>
+                <Button Grid.Column="1" Grid.Row="2" Content="2"/>
+                <Button Grid.Column="2" Grid.Row="2" Content="3"/>
+                <Button Grid.Column="0" Grid.Row="3" Content="0"/>
+                <StackPanel Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="2" Orientation="Horizontal">
+                    <Button Content="." Width="30"/>
+                    <Button Content="(" Width="30"/>
+                    <Button Content=")" Width="30"/>
+                </StackPanel>                   
+            </Grid>
+            
+            <!--Панель для размещения кнопок команд основных операций-->
+            <Grid Grid.Column="3" Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Button Grid.Column="0" Grid.Row="0" Content="BS" ToolTip="Удалить предыдущий символ в строке ввода"/>
+                <Button Grid.Column="1" Grid.Row="0" Content="C" ToolTip="Очистить строку ввода"/>
+                <Button Grid.Column="0" Grid.Row="1" Content="/" ToolTip="Разделить"/>
+                <Button Grid.Column="1" Grid.Row="1" Content="x^y" ToolTip="Возведение в степень"/>
+                <Button Grid.Column="0" Grid.Row="2" Content="*" ToolTip="Умножить"/>
+                <Button Grid.Column="1" Grid.Row="2" Content="'" ToolTip="Знак для ввода минут и секунд в градусах"/>
+                <Button Grid.Column="0" Grid.Row="3" Content="-" ToolTip="Вычесть"/>
+                <Button Grid.Column="1" Grid.Row="3" Content="D" ToolTip="Знак градуса"/>
+                <Button Grid.Column="0" Grid.Row="4" Content="+" ToolTip="Сложить"/>
+                <Button Grid.Column="1" Grid.Row="4" Content="=" ToolTip="Выполнить"/>
+            </Grid>
+        </Grid>        
     </Grid>
 </Window>
