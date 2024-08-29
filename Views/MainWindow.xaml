@@ -76,15 +76,19 @@
                 <Button Content=">" Grid.Column="1" Grid.Row="4" ToolTip="Выбор ячейки памяти"/>
             </Grid>
             <!--Панель для размещения кнопок включения обратных и гиперболических функций-->
-            <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal">
-                <Button Content="Inv" ToolTip="Обратные функции" Width="50"/>
-                <Button Content="Hyp" ToolTip="Гиперболические функции" Width="50"/>
-            </StackPanel>
+            <Grid Grid.Row="0" Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" Content="Inv" ToolTip="Обратные функции"/>
+                <Button Grid.Column="1" Content="Hyp" ToolTip="Гиперболические функции"/>
+            </Grid>
             <!--Панель для размещения тригонометрических и логарифмических функций-->
-            <Grid Grid.Row="1" Grid.Column="1" Width="120">
+            <Grid Grid.Row="1" Grid.Column="1">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="50"/>
-                    <ColumnDefinition Width="70"/>                    
+                    <ColumnDefinition />                    
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition/>
@@ -109,16 +113,26 @@
             </Grid>
             
             <!--Панель для размещения кнопок команд для работы с буфером обмена-->
-            <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2">                
-                <Button Content="Paste" ToolTip="Вставить"/>
-                <Button Content="Copy" ToolTip="Копировать"/>
-                <Button Content=">" ToolTip="Копировать"/>
-                <Button Content="ACopy" ToolTip="Автокопирование в буфер обмена"/>
-                <Button Content=">" ToolTip="Автокопирование в буфер обмена"/>
-                <Button Content="APaste" ToolTip="Автовставка результата в документ"/>
-                <Button Content=">" ToolTip="Автовставка результата в документ"/>
-                <Button Content="!" ToolTip="Автовыполнение функции"/>
-            </StackPanel>
+            <Grid Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" Content="Paste" ToolTip="Вставить"/>
+                <Button Grid.Column="1" Content="Copy" ToolTip="Копировать"/>
+                <Button Grid.Column="2" Content=">" ToolTip="Копировать"/>
+                <Button Grid.Column="3" Content="ACopy" ToolTip="Автокопирование в буфер обмена"/>
+                <Button Grid.Column="4" Content=">" ToolTip="Автокопирование в буфер обмена"/>
+                <Button Grid.Column="5" Content="APaste" ToolTip="Автовставка результата в документ"/>
+                <Button Grid.Column="6" Content=">" ToolTip="Автовставка результата в документ"/>
+                <Button Grid.Column="7" Content="!" ToolTip="Автовыполнение функции"/>
+            </Grid>
             <!--Панель для размещения цифровых кнопок-->
             <Grid Grid.Row="1" Grid.Column="2">
                 <Grid.ColumnDefinitions>
@@ -142,11 +156,16 @@
                 <Button Grid.Column="1" Grid.Row="2" Content="2"/>
                 <Button Grid.Column="2" Grid.Row="2" Content="3"/>
                 <Button Grid.Column="0" Grid.Row="3" Content="0"/>
-                <StackPanel Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="2" Orientation="Horizontal">
-                    <Button Content="." Width="30"/>
-                    <Button Content="(" Width="30"/>
-                    <Button Content=")" Width="30"/>
-                </StackPanel>                   
+                <Grid Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Button Grid.Column="0" Content="." Width="30"/>
+                    <Button Grid.Column="1" Content="(" Width="30"/>
+                    <Button Grid.Column="2" Content=")" Width="30"/>
+                </Grid>                   
             </Grid>
             
             <!--Панель для размещения кнопок команд основных операций-->
