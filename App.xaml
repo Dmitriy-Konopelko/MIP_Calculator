@@ -10,6 +10,8 @@
                 <!--Шрифт-->
                 <ResourceDictionary Source="Resourses/Styles/FontFamily.xaml"/>
                 <ResourceDictionary Source="Resourses/Styles/FontSize.xaml"/>
+                <!--Элементы управления-->
+                <ResourceDictionary Source="Resourses/Styles/Button.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>       
     </Application.Resources>
