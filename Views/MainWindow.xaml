@@ -52,7 +52,7 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <!--Панель кнопок для работы с памятью-->
-            <Grid Grid.Row="0" Grid.Column="0" Grid.RowSpan="2">
+            <Grid Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" Margin="3,3,0,3">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
@@ -76,7 +76,7 @@
                 <Button Content=">" Grid.Column="1" Grid.Row="4" ToolTip="Выбор ячейки памяти"/>
             </Grid>
             <!--Панель для размещения кнопок включения обратных и гиперболических функций-->
-            <Grid Grid.Row="0" Grid.Column="1">
+            <Grid Grid.Row="0" Grid.Column="1" Margin="3,3,0,0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
@@ -85,7 +85,7 @@
                 <Button Grid.Column="1" Content="Hyp" ToolTip="Гиперболические функции"/>
             </Grid>
             <!--Панель для размещения тригонометрических и логарифмических функций-->
-            <Grid Grid.Row="1" Grid.Column="1">
+            <Grid Grid.Row="1" Grid.Column="1" Margin="3,3,0,3">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="50"/>
                     <ColumnDefinition />                    
@@ -113,7 +113,7 @@
             </Grid>
             
             <!--Панель для размещения кнопок команд для работы с буфером обмена-->
-            <Grid Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2">
+            <Grid Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2" Margin="3,3,3,0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
@@ -134,7 +134,7 @@
                 <Button Grid.Column="7" Content="!" ToolTip="Автовыполнение функции"/>
             </Grid>
             <!--Панель для размещения цифровых кнопок-->
-            <Grid Grid.Row="1" Grid.Column="2">
+            <Grid Grid.Row="1" Grid.Column="2" Margin="3,3,3,3">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
@@ -169,7 +169,7 @@
             </Grid>
             
             <!--Панель для размещения кнопок команд основных операций-->
-            <Grid Grid.Column="3" Grid.Row="1">
+            <Grid Grid.Column="3" Grid.Row="1" Margin="0,3,3,3">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
